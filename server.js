@@ -47,7 +47,7 @@ app.use(express.urlencoded({ extended: true}));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // tells express to use the routes we have created
-//app.use(routes);
+app.use(routes);
 
 // we start a squelize database and then we have our app start 
 sequelize.sync({ force: false }).then(() => {
