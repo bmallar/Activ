@@ -1,10 +1,10 @@
 const router = require('express').Router();
 const userRoutes = require('./userRoutes');
-const historyRoutes = require('./historyRoutes');
+const workoutRoutes = require('./workoutRoutes');
 const friendsListRoutes = require('./firendsListRoutes');
 
 router.use('/user', userRoutes);
-router.use('/history', historyRoutes);
+router.use('/workout', workoutRoutes);
 router.use('/friendsList', friendsListRoutes);
 
 
