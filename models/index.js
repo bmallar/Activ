@@ -1,6 +1,6 @@
 const User = require('./user');
-const History = require('./history')
+const Workout = require('./workout')
 const FriendsList = require('./friendsList')
 
 
-module.exports = { User, History, FriendsList}
+module.exports = { User, Workout, FriendsList}
