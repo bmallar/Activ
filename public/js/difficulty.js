@@ -170,7 +170,7 @@ const dropDowns = document.querySelectorAll(".dropdown");
       if (element.matches('.dropdown-item') === true) {
         // Get its data-index value and remove the todo element from the list
         
-        event.currentTarget.querySelector(".selected-option").textContent = element.textContent;
+        event.currentTarget.querySelector(".dropdown-toggle").textContent = element.textContent;
       } else {
         ;
       }
