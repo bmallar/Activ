@@ -4,12 +4,12 @@
 
       <div class="input-group flex-nowrap">
         <span class="input-group-text" id="addon-wrapping">Exercise</span>
-        <input type="text" class="form-control" placeholder="Exercise Name" aria-label="Exercise Name"
+        <input type="text" class="form-control" id="search" placeholder="Exercise Name" aria-label="Exercise Name"
           aria-describedby="addon-wrapping">
       </div>
 
       <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <button class="btn btn-secondary dropdown-toggle" id="difficulty" type="button" data-bs-toggle="dropdown" aria-expanded="false">
           Difficulty
         </button>
         <ul class="dropdown-menu">
@@ -24,7 +24,7 @@
 
 
       <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <button class="btn btn-secondary dropdown-toggle" id="muscle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
           Muscle
         </button>
         <ul class="dropdown-menu">
@@ -51,7 +51,7 @@
 
 
       <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <button class="btn btn-secondary dropdown-toggle" id="type" type="button" data-bs-toggle="dropdown" aria-expanded="false">
           Type
         </button>
         <ul class="dropdown-menu">
@@ -69,14 +69,13 @@
 
 
       <div class="btn-group">
-        <button type="button" class="btn btn-primary">Search</button>
+        <button type="button" class="btn btn-primary" id="searchBtn">Search</button>
       </div>
 
-
-      <div id="chosen-workout"></div>
-
     </div>
-    <div class="col-9"></div>
+    <div class="col-9" id="chosen-workout">
+      
+    </div>
   </div>
 
 </div>
@@ -85,3 +84,5 @@
 <script src="../controllers/api/workoutRoutes.js"></script> --}}
 <script src="/js/difficulty.js"></script>
 <script src="/js/modal.js"></script>
+<script src="/js/card.js"></script>
+<script src="/js/onePath.js"></script>
