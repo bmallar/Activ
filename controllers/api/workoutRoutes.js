@@ -13,6 +13,7 @@ router.get('/muscle/:exerciseMuscle', async (req, res) => {
         });
 
         const result = await response.json();
+        res.json(result);
         console.log(result);
     } catch (error) {
         console.log('Error:', error);
@@ -28,6 +29,7 @@ router.get('/difficulty/:difficultyLevel', async(req, res) => {
             }
         });
         const result = await response.json();
+        res.json(result);
         console.log(result);
     } catch (error) {
         console.log('Error:', error);
@@ -43,6 +45,7 @@ router.get('/type/:exerciseType', async(req, res) => {
             }
         });
         const result = await response.json();
+        res.json(result);
         console.log(result);
     } catch (error) {
         console.log('Error:', error);
@@ -58,6 +61,7 @@ router.get('/name/:exerciseName', async(req, res) => {
             }
         });
         const result = await response.json();
+        res.json(result);
         console.log(result);
     } catch (error) {
         console.log('Error:', error);
@@ -74,6 +78,7 @@ router.get('/name/:exerciseName/type/:exerciseType', async(req, res) => {
             }
         });
         const result = await response.json();
+        res.json(result);
         console.log(result);
     } catch (error) {
         console.log('Error:', error);
@@ -89,6 +94,7 @@ router.get('/name/:exerciseName/muscle/:exerciseMuscle', async(req, res) => {
             }
         });
         const result = await response.json();
+        res.json(result);
         console.log(result);
     } catch (error) {
         console.log('Error:', error);
@@ -104,6 +110,7 @@ router.get('/name/:exerciseName/difficulty/:exerciseDifficulty', async(req, res)
             }
         });
         const result = await response.json();
+        res.json(result);
         console.log(result);
     } catch (error) {
         console.log('Error:', error);
@@ -119,6 +126,7 @@ router.get('/type/:exerciseType/muscle/:exerciseMuscle', async(req, res) => {
             }
         });
         const result = await response.json();
+        res.json(result);
         console.log(result);
     } catch (error) {
         console.log('Error:', error);
@@ -134,6 +142,7 @@ router.get('/type/:exerciseType/difficulty/:exerciseDifficulty', async(req, res)
             }
         });
         const result = await response.json();
+        res.json(result);
         console.log(result);
     } catch (error) {
         console.log('Error:', error);
@@ -149,6 +158,7 @@ router.get('/muscle/:exerciseMuscle/difficulty/:exerciseDifficulty', async(req, 
             }
         });
         const result = await response.json();
+        res.json(result);
         console.log(result);
     } catch (error) {
         console.log('Error:', error);
@@ -165,6 +175,7 @@ router.get('/name/:exerciseName/type/:exerciseType/muscle/:exerciseMuscle', asyn
             }
         });
         const result = await response.json();
+        res.json(result);
         console.log(result);
     } catch (error) {
         console.log('Error:', error);
@@ -180,6 +191,7 @@ router.get('/name/:exerciseName/type/:exerciseType/difficulty/:exerciseDifficult
             }
         });
         const result = await response.json();
+        res.json(result);
         console.log(result);
     } catch (error) {
         console.log('Error:', error);
@@ -195,6 +207,7 @@ router.get('/name/:exerciseName/muscle/:exerciseMuscle/difficulty/:exerciseDiffi
             }
         });
         const result = await response.json();
+        res.json(result);
         console.log(result);
     } catch (error) {
         console.log('Error:', error);
@@ -210,6 +223,7 @@ router.get('/type/:exerciseType/muscle/:exerciseMuscle/difficulty/:exerciseDiffi
             }
         });
         const result = await response.json();
+        res.json(result);
         console.log(result);
     } catch (error) {
         console.log('Error:', error);
@@ -226,6 +240,7 @@ router.get('/name/:exerciseName/type/:exerciseType/muscle/:exerciseMuscle/diffic
             }
         });
         const result = await response.json();
+        res.json(result);
         console.log(result);
     } catch (error) {
         console.log('Error:', error);
