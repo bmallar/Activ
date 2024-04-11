@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { Workout } = require('../../models');
 
+
 // 1 parameter
 router.get('/muscle/:exerciseMuscle', async (req, res) => {
     try {
@@ -10,6 +11,7 @@ router.get('/muscle/:exerciseMuscle', async (req, res) => {
                 'X-Api-Key': process.env.API_KEY
             }
         });
+
         const result = await response.json();
         res.json(result);
         console.log(result);
