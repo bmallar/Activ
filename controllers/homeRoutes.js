@@ -42,4 +42,10 @@ router.get("/history", async (req, res)=>{
     })
 });
 
+router.get("/premadeworkouts", (req, res)=>{
+    res.render("PremadeWorkout", {
+        logged_in: req.session.logged_in
+    })
+});
+
 module.exports = router;
