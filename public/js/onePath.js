@@ -12,7 +12,6 @@ let difficultyDefault = 0;
 let muscleDefault = 0;
 let typeDefault = 0;
 
-console.log(`Name: ${name}, Difficulty: ${difficulty}, Muscle: ${muscle}, Type: ${type}`);
 
 if(name){
   nameDefault = 1;
@@ -47,8 +46,6 @@ if(nameDefault){
   searchInput = type;
   searchType = "type"
 }
-
-console.log(`SearchType: ${searchType}, SearchInput: ${searchInput}`)
 
 await fetch (`/api/workout/${searchType}/${searchInput}`)
 .then(response => response.json())
@@ -92,11 +89,65 @@ await fetch (`/api/workout/${searchType}/${searchInput}`)
     }
   }
 
-console.log(`${searchType[0]},${searchType[1]},${searchInput[0]},${searchInput[1]}`)
-
 await fetch (`/api/workout/${searchType[0]}/${searchInput[0]}/${searchType[1]}/${searchInput[1]}`)
 .then(response => response.json())
 .then(response => {
+    console.log(response)
+    document.querySelector("#chosen-workout").innerHTML = ""
+
+   response.forEach((exercise, index) => {
+      const card = exerciseCard(exercise, index);
+      document.querySelector("#chosen-workout").insertAdjacentHTML("afterbegin", card)
+    })
+});
+} else if(notDefault === 3){
+
+  let searchType = [];
+  let searchInput = [];
+
+  if(nameDefault){
+    if(typeDefault){
+      if(muscleDefault){
+        searchInput.push(name,type,muscle);
+        searchType.push("name","type","muscle");
+      }else if(difficultyDefault){
+        searchInput.push(name,type,difficulty);
+        searchType.push("name","type","difficulty");
+      }
+    } else if(muscleDefault){
+      if(difficultyDefault){
+        searchInput.push(name,muscle,difficulty);
+        searchType.push("name","muscle","difficulty");
+      }
+    }
+  } else if(typeDefault){
+    if(muscleDefault){
+      if(difficultyDefault){
+        searchInput.push(type,muscle,difficulty);
+        searchType.push("type","muscle","difficulty");
+      }
+    }
+  }
+
+  await fetch (`/api/workout/${searchType[0]}/${searchInput[0]}/${searchType[1]}/${searchInput[1]}/${searchType[2]}/${searchInput[2]}`)
+  .then(response => response.json())
+  .then(response => {
+    console.log(response)
+    document.querySelector("#chosen-workout").innerHTML = ""
+
+   response.forEach((exercise, index) => {
+      const card = exerciseCard(exercise, index);
+      document.querySelector("#chosen-workout").insertAdjacentHTML("afterbegin", card)
+    })
+});
+
+} else if(notDefault === 4){
+  const searchInput = [name,type,muscle,difficulty];
+  const searchType = ["name","type","muscle","difficulty"];
+
+  await fetch (`/api/workout/${searchType[0]}/${searchInput[0]}/${searchType[1]}/${searchInput[1]}/${searchType[2]}/${searchInput[2]}/${searchType[3]}/${searchInput[3]}`)
+  .then(response => response.json())
+  .then(response => {
     console.log(response)
     document.querySelector("#chosen-workout").innerHTML = ""
 
