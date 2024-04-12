@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Workout } = require('../models')
+const { Workout, User } = require('../models')
 
 router.get('/', (req, res) => {
     res.render("LandingPage", {
@@ -25,8 +25,13 @@ router.get("/timeline", (req, res)=>{
     })
 });
 
-router.get("/friends", (req, res)=>{
-    res.render("FriendsList", {
+router.get("/userlist", async (req, res)=>{
+    const userData = await User.findAll().catch((err) => {
+        res.json(err);
+    });
+    const users = userData.map((user) => user.get({ plain: true }));
+    res.render("UserList", {
+        users,
         logged_in: req.session.logged_in
     })
 });

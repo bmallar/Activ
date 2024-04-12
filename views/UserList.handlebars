@@ -1,0 +1,13 @@
+<div class="bg-light">
+    <h1>User List</h1>
+</div>
+
+{{#each users as |user|}}
+<div class="row mb-4 border border-dark">
+  <div class="col-md-5">
+    <p>Username: {{user.username}}</p>
+    <p>Email: {{user.email}}</p>
+    <p>Signup Date: {{formatDate user.date_joined}}</p>
+  </div>
+</div>
+{{/each}}
