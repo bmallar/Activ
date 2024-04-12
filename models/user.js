@@ -30,6 +30,11 @@ User.init(
                 len: [8],
             },
         },
+        date_joined: {
+            type:  DataTypes.DATE,
+            allowNull: false,
+            defaultValue: DataTypes.NOW,
+        },
     },
     {
         hooks: {
