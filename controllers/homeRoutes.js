@@ -19,8 +19,13 @@ router.get("/exercisepicker", (req, res)=>{
     })
 });
 
-router.get("/timeline", (req, res)=>{
+router.get("/timeline", async (req, res)=>{
+    const workoutData = await Workout.findAll().catch((err) =>  {
+        res.json(err);
+    });
+    const workouts = workoutData.map((workout) => workout.get({ plain: true }));
     res.render("CommunityFeed", {
+        workouts,
         logged_in: req.session.logged_in
     })
 });
