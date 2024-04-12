@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const Workout = require('../models/Workout')
 
 router.get('/', (req, res) => {
     res.render("LandingPage", {
@@ -30,8 +31,13 @@ router.get("/friends", (req, res)=>{
     })
 });
 
-router.get("/history", (req, res)=>{
+router.get("/history", async (req, res)=>{
+    const workoutData = await Workout.findAll().catch((err) =>  {
+        res.json(err);
+    });
+    const workouts = workoutData.map((workout) => workout.get({ plain: true }));
     res.render("History", {
+        workouts,
         logged_in: req.session.logged_in
     })
 });
