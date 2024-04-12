@@ -16,3 +16,11 @@ const dropDowns = document.querySelectorAll(".dropdown");
 
     })
   }
+
+let yourWorkouts = [];
+
+function addExercise(exercise){
+  yourWorkouts.push(exercise);
+  const card = yourCard(yourWorkouts[yourWorkouts.length-1], yourWorkouts.length-1);
+  document.querySelector("#your-workout").insertAdjacentHTML("afterbegin", card);
+}
