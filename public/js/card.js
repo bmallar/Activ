@@ -1,15 +1,16 @@
 function exerciseCard(exercise, index) {
     return `
-    <section "add-exercise">
-    <div class="card" style="width: 18rem;">
+    <section class="col-4">
+    <div class="card p-1" style="width: 18rem;">
         <div class="card-header">
             ${exercise.name}
         </div>
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item">${exercise.type}</li>
-            <li class="list-group-item">${exercise.muscle}</li>
-            <li class="list-group-item">${exercise.equipment}</li>
-            <li class="list-group-item">${exercise.difficulty}</li>
+        <button type="button" data-bs-toggle="collapse" data-bs-target="#collapse${index}" aria-expanded="false" aria-controls="collapse${index}">Expand v</button>
+        <ul class="collapse list-group list-group-flush" id="collapse${index}">
+            <li class="list-group-item">Type: ${exercise.type}</li>
+            <li class="list-group-item">Muscle: ${exercise.muscle}</li>
+            <li class="list-group-item">Equipment: ${exercise.equipment}</li>
+            <li class="list-group-item">Difficulty: ${exercise.difficulty}</li>
         </ul>
     </div>
         
@@ -31,7 +32,6 @@ function exerciseCard(exercise, index) {
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
           </div>
         </div>
       </div>
