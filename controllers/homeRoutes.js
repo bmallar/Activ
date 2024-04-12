@@ -12,8 +12,8 @@ router.get('/profile', (req, res) => {
     })
 });
 
-router.get("/workoutpicker", (req, res)=>{
-    res.render("WorkoutPicker", {
+router.get("/exercisepicker", (req, res)=>{
+    res.render("ExercisePicker", {
         logged_in: req.session.logged_in
     })
 });
