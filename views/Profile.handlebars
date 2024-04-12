@@ -1,3 +1,32 @@
 <div class="bg-light">
 <h1> Profile Page</h1>
+
+<div class="row mt-4">
+  <div class="col-md-6">
+    <h3>Enter a New Workout:</h3>
+
+    <form class="form">
+      <div class="form-group">
+        <label for="workout-title">Give your workout a name:</label>
+        <input class="form-input" type="text" id="workout-title" name="workout-title" />
+      </div>
+      <div class="form-group">
+        <label for="workout-content">List the exercises you completed:</label>
+        <input class="form-input" type="text" id="workout-content" name="workout-content" />
+      </div>
+      <div class="form-group">
+        <label for="workout-intensity">Choose an intensity level for your workout (1-10):</label>
+        <input class="form-input" type="number" id="workout-intensity" name="workout-intensity" />
+      </div>
+      <div class="form-group">
+        <label for="workout-duration">How long was your workout? (minutes):</label>
+        <input class="form-input" type="number" id="workout-duration" name="workout-duration" />
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary" id="workout-submit">Create Workout Entry</button>
+      </div>
+    </form>
+  </div>
 </div>
+
+<script src="/js/profile.js"></script>
