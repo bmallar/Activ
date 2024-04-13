@@ -18,7 +18,7 @@ router.get("/profile/:id", async (req, res)=>{
         res.json(err);
     });
     const user = userData.get({ plain: true })
-    res.render("Profile", {
+    res.render("profile/1", {
         user,
         logged_in: req.session.logged_in
     })
