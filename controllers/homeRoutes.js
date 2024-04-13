@@ -13,6 +13,17 @@ router.get('/profile', (req, res) => {
     })
 });
 
+router.get("/profile/:id", async (req, res)=>{
+    const userData = await User.findByPk(req.params.id).catch((err) => {
+        res.json(err);
+    });
+    const user = userData.get({ plain: true })
+    res.render("Profile", {
+        user,
+        logged_in: req.session.logged_in
+    })
+});
+
 router.get("/exercisepicker", (req, res)=>{
     res.render("ExercisePicker", {
         logged_in: req.session.logged_in

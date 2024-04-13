@@ -3,7 +3,7 @@
 </div>
 
 {{#each users as |user|}}
-<div class="row mb-4 border border-dark">
+<div class="row mb-4 border border-dark user-card" data-user-id="{{user.id}}">
   <div class="col-md-5">
     <p>Username: {{user.username}}</p>
     <p>Email: {{user.email}}</p>
@@ -11,3 +11,5 @@
   </div>
 </div>
 {{/each}}
+
+<script src="/js/userList.js"></script>
