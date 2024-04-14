@@ -2,17 +2,4 @@
     <h1>Timeline</h1>
 </div>
 
-{{#each workouts as |workout|}}
-<div class="row mb-4 border border-dark">
-  <div class="col-md-5">
-    <h2>
-      {{workout.title}}
-    </h2>
-    <p>User: {{workout.user_id}}</p>
-    <p>Completed on {{formatDate workout.date_completed}}</p>
-    <p>Exercises completed: {{workout.content}}</p>
-    <p>Intensity: {{workout.intensity}}</p>
-    <p>Length of workout: {{workout.duration}}</p>
-  </div>
-</div>
-{{/each}}
+{{> timeline-details}}
