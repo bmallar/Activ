@@ -2,14 +2,6 @@
     <h1>User List</h1>
 </div>
 
-{{#each users as |user|}}
-<div class="row mb-4 border border-dark user-card" data-user-id="{{user.id}}">
-  <div class="col-md-5">
-    <p>Username: {{user.username}}</p>
-    <p>Email: {{user.email}}</p>
-    <p>Signup Date: {{formatDate user.date_joined}}</p>
-  </div>
-</div>
-{{/each}}
+{{> userlist-details}}
 
 <script src="/js/userList.js"></script>

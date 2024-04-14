@@ -1,7 +1,9 @@
-<div class="bg-light">
-<p>Username: {{user.username}} </p>
-<p>Email: {{user.email}} </p>
-<p>Date Joined: {{formatDate user.date_joined}}</p>
-<p>Number of Workouts Logged:</p>
-<button class="btn btn-primary" id="userHistory" data-user-id="{{user.id}}">Workout History</button>
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">{{user.username}}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">Email: {{user.email}}</h6>
+    <p class="card-text">Date Joined: {{formatDate user.date_joined}}</p>
+    <p class="card-text">Number of Workouts Logged:</p>
+    <button class="btn btn-primary" id="userHistory" data-user-id="{{user.id}}">Workout History</button>
+  </div>
 </div>
