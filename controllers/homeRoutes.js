@@ -69,14 +69,35 @@ router.get("/userlist", async (req, res)=>{
 });
 
 router.get("/history", async (req, res)=>{
-    const workoutData = await Workout.findAll().catch((err) =>  {
-        res.json(err);
+try {
+    const userId = req.session.user_id;
+    const workoutData = await Workout.findAll({
+        where: { user_id: userId }
     });
     const workouts = workoutData.map((workout) => workout.get({ plain: true }));
     res.render("History", {
         workouts,
         logged_in: req.session.logged_in
-    })
+    });
+} catch (err) {
+    res.json(err);
+}
+});
+
+router.get("/history/:id", async (req, res) => {
+    try {
+        const userId = req.params.id;
+        const workoutData = await Workout.findAll({
+            where: { user_id: userId }
+        });
+        const workouts = workoutData.map((workout) => workout.get({ plain: true }));
+        res.render("History", {
+            workouts,
+            logged_in: req.session.logged_in
+        });
+    } catch (err) {
+        res.json(err);
+    }
 });
 
 router.get("/premadeworkouts", (req, res)=>{
