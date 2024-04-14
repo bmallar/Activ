@@ -1,0 +1,9 @@
+{{#each users as |user|}}
+<div class="card user-card w-100" data-user-id="{{user.id}}">
+  <div class="card-body col-md-5">
+    <h5 class="card-title">{{user.username}}</h5>
+    <p class="card-text">Email: {{user.email}}</p>
+    <p class="card-text">Signup Date: {{formatDate user.date_joined}}</p>
+  </div>
+</div>
+{{/each}}
