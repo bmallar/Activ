@@ -7,10 +7,26 @@ router.get('/', (req, res) => {
     })
 });
 
-router.get('/profile', (req, res) => {
-    res.render('Profile', {
+router.get("/profile", async (req, res) => {
+    // this line grabs the user ID from the session info that we save when we login
+    const userId = req.session.user_id;
+
+    // this retrieves the data about the logged in user
+    const userData = await User.findByPk(userId).catch((err) => {
+        res.json(err);
+    });
+
+    if (!userData) {
+        return res.status(404).send("User not found");
+    }
+
+    const user = userData.get({ plain: true });
+
+    // Render the profile page with only the data of the logged in user
+    res.render("Profile", {
+        user,
         logged_in: req.session.logged_in
-    })
+    });
 });
 
 router.get("/profile/:id", async (req, res)=>{
@@ -18,7 +34,7 @@ router.get("/profile/:id", async (req, res)=>{
         res.json(err);
     });
     const user = userData.get({ plain: true })
-    res.render("profile/1", {
+    res.render("Profile", {
         user,
         logged_in: req.session.logged_in
     })
