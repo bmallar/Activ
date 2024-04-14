@@ -4,7 +4,7 @@
     <h5 class="card-title">{{workout.title}}</h5>
     <h6 class="card-subtitle mb-2 text-muted">Completed on {{formatDate workout.date_completed}}</h6>
     <p class="card-text">Exercises completed: {{workout.content}}</p>
-    <p class="card-text">Intensity: {{workout.intensity}}</p>
-    <p class="card-text">Length of workout: {{workout.duration}}</p>
+    <p class="card-text">Intensity: {{workout.intensity}} out of 10</p>
+    <p class="card-text">Length of workout: {{workout.duration}} minutes</p>
 </div>
 {{/each}}

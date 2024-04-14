@@ -1,6 +1,5 @@
 const User = require('./user');
 const Workout = require('./workout')
-const FriendsList = require('./friendsList')
 
 User.hasMany(Workout, {
     foreignKey: 'user_id',
@@ -12,4 +11,4 @@ Workout.belongsTo(User, {
     onDelete: 'CASCADE'
 });
 
-module.exports = { User, Workout, FriendsList}
+module.exports = { User, Workout }
