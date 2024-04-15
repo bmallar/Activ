@@ -24,3 +24,17 @@ function addExercise(exercise){
   const card = yourCard(yourWorkouts[yourWorkouts.length-1], yourWorkouts.length-1);
   document.querySelector("#your-workout").insertAdjacentHTML("afterbegin", card);
 }
+
+function deleteExercise(index){
+  yourWorkouts.splice(index, 1);
+  document.querySelector(`#exercise${index}`).remove();
+}
+
+function addWorkout(){
+  // 
+  yourWorkouts = [];
+  const allExercises = document.querySelectorAll(".exercises");
+  allExercises.forEach((exercise) => {
+    exercise.remove();
+  })
+}

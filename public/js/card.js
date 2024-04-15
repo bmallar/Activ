@@ -45,7 +45,7 @@ function exerciseCard(exercise, index) {
 
   function yourCard(exercise, index) {
     return `
-    <section class="col-4">
+    <section class="col-4 exercises" id="exercise${index}">
     <div class="card p-1" style="width: 18rem;">
         <div class="card-header">
             ${exercise.name}
@@ -63,6 +63,18 @@ function exerciseCard(exercise, index) {
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal${index}">
         Exercise Instructions
     </button>
+
+    <button type="button" class="btn btn-danger" onclick='deleteExercise(${index})'>Delete</button>
+
+    <div class="input-group input-group-sm mb-3">
+      <span class="input-group-text" id="inputGroup-sizing-sm">Sets</span>
+      <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+    </div>
+
+    <div class="input-group input-group-sm mb-3">
+      <span class="input-group-text" id="inputGroup-sizing-sm">Reps</span>
+      <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+    </div>
     
     <!-- Modal -->
     <div class="modal fade" id="yourModal${index}" tabindex="-1" aria-labelledby="yourModalLabel" aria-hidden="true">
