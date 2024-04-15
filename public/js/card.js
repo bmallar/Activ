@@ -1,6 +1,6 @@
 function exerciseCard(exercise, index) {
     return `
-    <section class="col-sm-12 col-md-6 col-lg-4">
+    <section class="col-sm-12 col-md-6 col-lg-4 my-2">
     <div class="card p-1" style="width: 18rem;">
         <div class="card-header">
             ${exercise.name}
@@ -15,7 +15,7 @@ function exerciseCard(exercise, index) {
     </div>
         
         <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal${index}">
+    <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal${index}">
         Exercise Instructions
     </button>
     
@@ -60,7 +60,7 @@ function exerciseCard(exercise, index) {
     </div>
         
         <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal${index}">
+    <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal${index}">
         Exercise Instructions
     </button>
 
