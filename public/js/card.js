@@ -1,6 +1,6 @@
 function exerciseCard(exercise, index) {
     return `
-    <section class="col-4">
+    <section class="col-sm-12 col-md-6 col-lg-4">
     <div class="card p-1" style="width: 18rem;">
         <div class="card-header">
             ${exercise.name}
@@ -45,7 +45,7 @@ function exerciseCard(exercise, index) {
 
   function yourCard(exercise, index) {
     return `
-    <section class="col-4 exercises" id="exercise${index}">
+    <section class="col-sm-12 col-md-6 col-lg-4 exercises" id="exercise${index}">
     <div class="card p-1" style="width: 18rem;">
         <div class="card-header">
             ${exercise.name}

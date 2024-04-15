@@ -38,3 +38,4 @@ function addWorkout(){
     exercise.remove();
   })
 }
+
